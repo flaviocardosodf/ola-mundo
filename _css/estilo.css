@@ -105,7 +105,19 @@ section#corpo {
     width: 520px;
     float: left;
     border-right: 1px solid #606060;
-    padding-right: 15px;
+    padding-right: 15px;    
+}
+table#tabelaspec{
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: right;
+    vertical-align: top;
 }
 aside#lateral {
     display: block;
