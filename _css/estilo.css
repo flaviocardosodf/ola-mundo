@@ -21,8 +21,8 @@ div#interface {
 }
 header#cabecalho img#icone{
     position: absolute;
-    left: 780px;
-    top: 70px;
+    left: 1275px;
+    top: 60px;
 }
 header#cabecalho{
     border-bottom: 1px #606060 solid;
@@ -116,12 +116,33 @@ table#tabelaspec{
 table#tabelaspec td{
     border: 1px solid #606060;
     padding: 10px;
-    text-align: right;
+    text-align: center;
+    vertical-align: middle;
+}
+table#tabelaspec td.esquerda{
+    color: white;
+    background-color: #606060;
     vertical-align: top;
+    font-weight: bold;
+}
+table#tabelaspec td.direita{
+    background-color: #888888;
+}
+table#tabelaspec caption{
+    color: #888888;
+    font-size: 14pt;
+    font-weight: bolder;
+}
+table#tabelaspec caption span{
+    display: block;
+    float: right;
+    color: #000000;
+    font-size: 8pt;
+    margin-top: 10px;
 }
 aside#lateral {
     display: block;
-    width: 350px;
+    width: 450px;
     float: right;
 }
 footer#rodape{
