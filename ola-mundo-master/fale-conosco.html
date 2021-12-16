@@ -4,8 +4,16 @@
         <meta charset="UTF-8">
         <title>Tudo Sobre Google Glass</title>
         <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+        <link rel="stylesheet" href="_css/form.css">
     </head>
     <script language="javascript" src=_javascript/funcoes.js></script>
+    <script>
+        function calc_total(){
+            var qtd=parseInt(document.getElementById('cQtd').value);
+            tot=qtd*6238,14;
+            document.getElementById('cTot').value=tot;
+        }
+    </script>
     <body>
     <div id="interface">
         
@@ -15,7 +23,7 @@
     <h2>A revolução do Google está chegando</h2>
     </hgroup>
 
-    <img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+    <img id="icone" src="_imagens/contato.png">
 
 <nav id="menu">
 <h1>Menu Principal</h1>
@@ -30,38 +38,68 @@
 
     </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
-
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+    <section>
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3>Atualizado em 01/Maio/2013</h3>
+                </hgroup>
+            </header>    
 
 
-[BOTÃO ENVIAR]
+<form method="post" id="fContato" action="mailto:flaviocardosodf@gmail.com" oninput="calc_total();"> 
+    <fieldset id="usuario">
+    <legend>Identificação do Usuário</legend>
+    <p>Nome:<label for="cNome"></label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+    <p>Senha: <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos"></p>
+    <p>E-mail:<input type="email" name="tMail" id="cMail" size="20" maxlength="40"></p>
+    <fieldset id="sexo"><legend>Sexo:</legend>
+        <input type="radio" name="tSexo" id="cMasc"> <label for="CMasc">Masculino</label><br>
+        <input type="radio" name="tSexo" id="cFem"> <label for="CFem">Feminino</label>
+        </fieldset>
+    <p>Data de Nascimento:<input type="date" name="tDate" id="tDate"></p>
+    </fieldset>
+<fieldset id="endereco">
+<legend>Endereço do Usuário</legend>
+    <p>Logradouro:<input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Rua, Av, etc..."></p>
+    <p>Número:<input type="number" name="tNum" id="cNum" size="5" placeholder="Nº"></p>
+    <p><label for="cEst">Estado:</label><select name="tEst" id="cEst">
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="SP">São Paulo</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="BA">Bahia</option>
+    </select></p>
+    <p><label>Cidade:</label><input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Cidade" list="Cidade"></p>
+    <datalist id="Cidade">
+        <option value="Rio de Janeiro"></option>
+        <option value="Nova Iguaçu"></option>
+        <option value="Niterói"></option>
+    </datalist>
+</fieldset>
+
+<fieldset id="mensagem">
+<legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência:</label>Min<input type="range" name="tUrg" id="cUrg" min="0" max="10">Max</p>
+    <p><label for="cMsg">Mensagem:</label><textarea name="tMsg" id="tMsg" cols="35" rows="5" placeholder="Deixe aqui a sua mensagem"></textarea></p>
+</fieldset>
+
+<fieldset id="pedido">
+<legend>Quero um Google Glass</legend>
+    <p>
+    <input type="checkbox" checked name="tPed" id="cPed"><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><label for="cCor">Cor:</label><input type="color" name="cCor" id="cCor" value="#888888"></p>
+    <p><label for="cQtd">Quantidade:</label><input type="number" name="cQtd" id="cQtd" min="0" max="5" value="0"></p>
+    <p><label for="cTot">Preço Total: R$</label><input type="text" name="cTot" id="cTot" placeholder="Valor Total" readonly></p>
+</fieldset>
+
+<input type="image" name="tEnviar" src="_imagens/botao-enviar.png">
+</form>
+
+</article>
+</section>  
 
 <footer id="rodape">
     <p>Copyright &copy; 2013 - by Gustavo Guanabara <br>
